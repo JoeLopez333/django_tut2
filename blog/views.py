@@ -7,7 +7,10 @@ from django.http import HttpResponse
 from .models import Post
 
 def about(request):
-    return render(request, 'blog/about.html')
+    context = {
+        'user': User.objects.all()[0]
+    }
+    return render(request, 'blog/about.html', context)
 
 #function call to render plot data
 def show_plot(request):
@@ -73,8 +76,8 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False #I hate this conditional
 
 
-def about(request):
-    return render(request, 'blog/about.html', {'title': 'about'})
+#def about(request):
+#    return render(request, 'blog/about.html', {'title': 'about'})
 
 
 
