@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% load plotly_dash %}
+
+{% block content %}
+    <h1>Sample IFE Dashboard</h1>
+    <div>
+        Created using plotly-dash
+    </div>
+    {% plotly_app name="DashPlot1" ratio=1 %}
+    <div>
+        This interactive web app uses data collected from the cooling system 
+        of a Formula Student electric racecar. I designed the data collection 
+        system for this year's car and we collected data from one testing session
+        before the season was cut short by Covid-19. The y-axis value represents 
+        the sampled temperature from four thermistors that were placed in different 
+        parts of the cooling system. You can select the different points and see how
+        hot the car got over the duration of a testing session (higher value = warmer)
+    </div>
+{% endblock content %}
