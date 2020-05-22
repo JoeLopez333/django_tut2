@@ -6,6 +6,13 @@ from django.views.generic import (
 from django.http import HttpResponse
 from .models import Post
 
+def about(request):
+    return render(request, 'blog/about.html')
+
+#function call to render plot data
+def show_plot(request):
+    return render(request, 'blog/plot.html')
+
 def home(request):
     context = {
         'posts': Post.objects.all()

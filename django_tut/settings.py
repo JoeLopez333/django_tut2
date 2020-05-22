@@ -27,9 +27,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['45.33.14.138','www.joelo-webs.fun']
+ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['45.33.14.138','www.joelo-webs.fun']
 
 
 # Application definition
@@ -37,7 +38,8 @@ ALLOWED_HOSTS = ['45.33.14.138','www.joelo-webs.fun']
 INSTALLED_APPS = [ 'blog.apps.BlogConfig', 'users.apps.UsersConfig',
         'crispy_forms', 'django.contrib.admin', 'django.contrib.auth',
         'django.contrib.contenttypes', 'django.contrib.sessions',
-        'django.contrib.messages', 'django.contrib.staticfiles', ]
+        'django.contrib.messages', 'django.contrib.staticfiles', 
+        'django_plotly_dash.apps.DjangoPlotlyDashConfig',]
 
 MIDDLEWARE = [ 'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
@@ -94,6 +96,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/' 

@@ -5,6 +5,8 @@ from .views import (
     PostDeleteView, UserPostListView)
 from . import views
 
+import blog.dash_app
+
 
 urlpatterns = [
     #convert class view into actual view object
@@ -15,5 +17,6 @@ urlpatterns = [
     path('post/new/', PostCreateView.as_view(), name='post-create'),
     path('post/<int:pk>/update', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete', PostDeleteView.as_view(), name='post-delete'),
-    path('about/', views.about, name='blog-about'),
+    path('plot/', views.show_plot, name='sample-plot'),
+    path('about/', views.about, name='about-me'),
 ]
